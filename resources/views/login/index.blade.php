@@ -26,14 +26,15 @@
         </div>
         <div class="card">
             <div class="body">
-                <form id="sign_in" method="POST">
+                <form id="sign_in" method="POST" action="">
                     <div class="msg">Sign in to start your session</div>
+                    <input type="hidden" name="_token" value="{{ Session::token() }}">
                     <div class="input-group">
                         <span class="input-group-addon">
                             <i class="material-icons">person</i>
                         </span>
                         <div class="form-line">
-                            <input type="text" class="form-control" name="username" placeholder="Username" required autofocus>
+                            <input type="text" class="form-control" name="email" placeholder="Username" required autofocus>
                         </div>
                     </div>
                     <div class="input-group">

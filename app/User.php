@@ -4,18 +4,23 @@ namespace Amipanel;
 
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Cartalyst\Sentinel\Users\EloquentUser as Authenticate;
+use Illuminate\Contracts\Auth\Authenticatable as AuthenticatableContract;
+use Illuminate\Contracts\Auth\CanResetPassword as CanResetPasswordContract;
 
-class User extends Authenticatable
+class User extends Authenticate implements AuthenticatableContract, CanResetPassword
 {
-    use Notifiable;
+    use Notifiable, Authenticatable, CanResetPassword;
 
     /**
      * The attributes that are mass assignable.
      *
      * @var array
      */
+    protected $table = 'users';
+
     protected $fillable = [
-        'name', 'email', 'password',
+        'email', 'username', 'password', 'first_name', 'last_name', 'last_login'
     ];
 
     /**
@@ -26,4 +31,6 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    protected $loginNames = ['email', 'username']
 }
