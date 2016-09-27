@@ -17,7 +17,7 @@ class SentinelMemberUser
     public function handle($request, Closure $next)
     {
         $user = Sentinel::getUser();
-        $role = Sentinel::findRoleBySlug('author');
+        $role = Sentinel::findRoleBySlug('member');
         if (!$user->inRole($role)) {
             return redirect('login');
         }

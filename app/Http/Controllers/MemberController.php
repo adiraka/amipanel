@@ -6,10 +6,10 @@ use Illuminate\Http\Request;
 
 use Amipanel\Http\Requests;
 
-class AdminController extends Controller
+class MemberController extends Controller
 {
     public function getHome()
     {
-        return view('admin.home');
+        return view('member.home');
     }
 }

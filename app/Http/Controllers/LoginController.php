@@ -32,7 +32,7 @@ class Logincontroller extends Controller
             $user = Sentinel::getUser();
             $admin = Sentinel::findRoleBySlug('admin');
             $member = Sentinel::findRoleBySlug('member');
-            $author = Sentinel::findRoleBySlug('author');
+            $author = Sentinel::findRoleBySlug('manager');
 
             if ($user->inRole($admin)) {
                 return redirect()->route('admin');
