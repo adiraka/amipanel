@@ -172,11 +172,16 @@ return [
         /*
          * Application Service Providers...
          */
-        App\Providers\AppServiceProvider::class,
-        App\Providers\AuthServiceProvider::class,
-        // App\Providers\BroadcastServiceProvider::class,
-        App\Providers\EventServiceProvider::class,
-        App\Providers\RouteServiceProvider::class,
+        Amipanel\Providers\AppServiceProvider::class,
+        Amipanel\Providers\AuthServiceProvider::class,
+        // Amipanel\Providers\BroadcastServiceProvider::class,
+        Amipanel\Providers\EventServiceProvider::class,
+        Amipanel\Providers\RouteServiceProvider::class,
+
+        // Extension Provider
+        Cartalyst\Sentinel\Laravel\SentinelServiceProvider::class,
+        Yajra\Datatables\DatatablesServiceProvider::class,
+        Maatwebsite\Excel\ExcelServiceProvider::class,
 
     ],
 
@@ -225,6 +230,13 @@ return [
         'URL' => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
+
+        // Extension Aliases
+        'Activation' => Cartalyst\Sentinel\Laravel\Facades\Activation::class,
+        'Reminder'   => Cartalyst\Sentinel\Laravel\Facades\Reminder::class,
+        'Sentinel'   => Cartalyst\Sentinel\Laravel\Facades\Sentinel::class,
+        'Datatables' => Yajra\Datatables\Facades\Datatables::class,
+        'Excel'      => Maatwebsite\Excel\Facades\Excel::class,
 
     ],
 

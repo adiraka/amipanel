@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Controllers\Auth;
+namespace Amipanel\Http\Controllers\Auth;
 
-use App\User;
+use Amipanel\User;
 use Validator;
-use App\Http\Controllers\Controller;
+use Amipanel\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\RegistersUsers;
 
 class RegisterController extends Controller
