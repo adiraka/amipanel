@@ -5,7 +5,7 @@
     <section class="content">
         <div class="container-fluid">
             <div class="block-header">
-                <h2>Admin Page</h2>
+                <h2>{{Sentinel::getUser()->roles()->get()->first()->name}} Page</h2>
             </div>
             <div class="row clearfix">
                 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
@@ -32,7 +32,7 @@
                                 <input name="_method" type="hidden" value="DELETE">
                                 <input type="hidden" name="_token" value="{{ Session::token() }}">
                                 <input type="hidden" name="id" value="{{$user->id}}">
-                                <p>Are you sure to delete this employee : {{$user->email}} ?</p> 
+                                <p>Are you sure to delete this employee : {{$user->email}} ?</p>
                                 <button type="submit" class="btn btn-lg btn-danger m-t-15 waves-effect">DELETE</button>&nbsp;
                                 <a href="{{route('viewEmployee')}}" class="btn btn-lg m-t-15 waves-effect">CANCEL</a>
 

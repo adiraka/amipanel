@@ -5,7 +5,7 @@
 <section class="content">
     <div class="container-fluid">
         <div class="block-header">
-            <h2>Member Home</h2>
+            <h2>{{Sentinel::getUser()->roles()->get()->first()->name}} Home</h2>
         </div>
         <div class="row clearfix">
             <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
