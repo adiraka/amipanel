@@ -32,13 +32,13 @@ Route::group(['middleware' => ['auth', 'admin'], 'prefix' => 'admin'], function(
     // Admin Home
     Route::get('/home', ['as' => 'admin', 'uses' => 'AdminController@getHome']);
     // Employee's Management
-    Route::get('/employee', ['as' => 'addEmployee', 'uses' => 'AdminController@getAddEmployee']);
-    Route::post('/employee', ['as' => 'addEmployee', 'uses' => 'AdminController@postAddEmployee']);
-    Route::get('/employee/view', ['as' => 'viewEmployee', 'uses' => 'AdminController@viewEmployee']);
-    Route::get('/employee/{id}', ['as' => 'getEmployee', 'uses' => 'AdminController@getEmployee']);
-    Route::put('/employee/{id}', ['as' => 'editEmployee', 'uses' => 'AdminController@editEmployee']);
-    Route::get('employee/{id}/delete', ['as' => 'alertEmployee', 'uses' => 'AdminController@alertEmployee']);
-    Route::delete('/employee/{id}/delete', ['as' => 'deleteEmployee', 'uses' => 'AdminController@deleteEmployee']);
+    Route::get('/employee', ['as' => 'addEmployee', 'uses' => 'EmployeeController@getAddEmployee']);
+    Route::post('/employee', ['as' => 'addEmployee', 'uses' => 'EmployeeController@postAddEmployee']);
+    Route::get('/employee/view', ['as' => 'viewEmployee', 'uses' => 'EmployeeController@viewEmployee']);
+    Route::get('/employee/{id}', ['as' => 'getEmployee', 'uses' => 'EmployeeController@getEmployee']);
+    Route::put('/employee/{id}', ['as' => 'editEmployee', 'uses' => 'EmployeeController@editEmployee']);
+    Route::get('employee/{id}/delete', ['as' => 'alertEmployee', 'uses' => 'EmployeeController@alertEmployee']);
+    Route::delete('/employee/{id}/delete', ['as' => 'deleteEmployee', 'uses' => 'EmployeeController@deleteEmployee']);
 });
 
 Route::group(['middleware' => ['auth', 'member'], 'prefix' => 'member'], function(){
