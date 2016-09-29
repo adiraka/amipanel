@@ -9,6 +9,30 @@
                         <span>Dashboard</span>
                     </a>
                 </li>
+                @if (Sentinel::check()->getRoles()->first()->slug == 'admin')
+                    <li>
+                        <a href="javascript:void(0);" class="menu-toggle">
+                            <i class="material-icons">account_box</i>
+                            <span>Employee's</span>
+                        </a>
+                        <ul class="ml-menu">
+                            <li>
+                                <a href="{{route('addEmployee')}}">
+                                    <span>Add</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="{{route('viewEmployee')}}">
+                                    <span>View</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                @elseif (Sentinel::check()->getRoles()->first()->slug == 'member')
+
+                @elseif (Sentinel::check()->getRoles()->first()->slug == 'manager')
+
+                @endif
                 <li>
                     <a href="javascript:void(0);" class="menu-toggle">
                         <i class="material-icons">assignment</i>

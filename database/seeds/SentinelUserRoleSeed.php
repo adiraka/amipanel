@@ -14,15 +14,15 @@ class SentinelUserRoleSeed extends Seeder
         DB::table('role_users')->delete();
 
         $adminUser = Sentinel::findByCredentials(['login' => 'admin@admin']);
-        $memberUser = Sentinel::findByCredentials(['login' => 'member@member']);
-        $managerUser = Sentinel::findByCredentials(['login' => 'manager@manager']);
+        // $memberUser = Sentinel::findByCredentials(['login' => 'member@member']);
+        // $managerUser = Sentinel::findByCredentials(['login' => 'manager@manager']);
 
         $adminRole = Sentinel::findRoleBySlug('admin');
-        $memberRole = Sentinel::findRoleBySlug('member');
-        $managerRole = Sentinel::findRoleBySlug('manager');
+        // $memberRole = Sentinel::findRoleBySlug('member');
+        // $managerRole = Sentinel::findRoleBySlug('manager');
 
         $adminRole->users()->attach($adminUser);
-        $memberRole->users()->attach($memberUser);
-        $managerRole->users()->attach($managerUser);
+        // $memberRole->users()->attach($memberUser);
+        // $managerRole->users()->attach($managerUser);
     }
 }

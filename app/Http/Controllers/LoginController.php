@@ -32,13 +32,16 @@ class Logincontroller extends Controller
             $user = Sentinel::getUser();
             $admin = Sentinel::findRoleBySlug('admin');
             $member = Sentinel::findRoleBySlug('member');
-            $author = Sentinel::findRoleBySlug('manager');
+            $manager = Sentinel::findRoleBySlug('manager');
 
             if ($user->inRole($admin)) {
+                Session::flash('success','Welcome Mr/Mrs. '.Sentinel::getUser()->first_name.', how are you today?');
                 return redirect()->route('admin');
             } elseif ($user->inRole($member)) {
+                Session::flash('success','Welcome Mr/Mrs. '.Sentinel::getUser()->first_name.', how are you today?');
                 return redirect()->route('member');
             } else if ($user->inRole($manager)) {
+                Session::flash('success','Welcome Mr/Mrs. '.Sentinel::getUser()->first_name.', how are you today?');
                 return redirect()->route('manager');
             } else {
                 return redirect()->back();

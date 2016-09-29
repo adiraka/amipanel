@@ -53,7 +53,8 @@ return [
 
     'users' => [
 
-        'model' => 'Cartalyst\Sentinel\Users\EloquentUser',
+        'model' => 'Amipanel\User',
+        // 'model' => 'Cartalyst\Sentinel\Users\EloquentUser',
 
     ],
 

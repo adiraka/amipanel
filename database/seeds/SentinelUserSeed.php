@@ -16,26 +16,23 @@ class SentinelUserSeed extends Seeder
 
         Sentinel::registerAndActivate([
             'email' => 'admin@admin',
-            'username' => 'admin',
             'password' => 'admin',
             'first_name' => 'ADMIN',
             'last_name' => 'AMIPANEL',
         ]);
 
-        Sentinel::registerAndActivate([
-            'email' => 'member@member',
-            'username' => 'member',
-            'password' => 'member',
-            'first_name' => 'MEMBER',
-            'last_name' => 'AMIPANEL',
-        ]);
-
-        Sentinel::registerAndActivate([
-            'email' => 'manager@manager',
-            'username' => 'manager',
-            'password' => 'manager',
-            'first_name' => 'MANAGER',
-            'last_name' => 'AMIPANEL',
-        ]);
+        // Sentinel::registerAndActivate([
+        //     'email' => 'member@member',
+        //     'password' => 'member',
+        //     'first_name' => 'MEMBER',
+        //     'last_name' => 'AMIPANEL',
+        // ]);
+        //
+        // Sentinel::registerAndActivate([
+        //     'email' => 'manager@manager',
+        //     'password' => 'manager',
+        //     'first_name' => 'MANAGER',
+        //     'last_name' => 'AMIPANEL',
+        // ]);
     }
 }

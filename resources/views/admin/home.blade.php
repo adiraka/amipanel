@@ -5,13 +5,13 @@
 <section class="content">
     <div class="container-fluid">
         <div class="block-header">
-            <h2>Admin Home</h2>
+            <h2>Admin Page</h2>
         </div>
         <div class="row clearfix">
             <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                 <div class="card">
                     <div class="header">
-                        <h2>Title Here</h2>
+                        <h2>Admin Dashboard</h2>
                         <ul class="header-dropdown m-r--5">
                             <li class="dropdown">
                                 <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
@@ -26,7 +26,7 @@
                         </ul>
                     </div>
                     <div class="body">
-
+                        @include('template.partials.alert')
                     </div>
                 </div>
             </div>
