@@ -11,6 +11,12 @@
 |
 */
 
+Route::get('/testimage', function(){
+    $img = Image::make('photo/photo_test.jpg')->resize(500, 500);
+
+    return $img->response('jpg');
+});
+
 // Logout
 Route::get('/logout', ['as' => 'logout', 'uses' => 'LoginController@logout']);
 
@@ -31,6 +37,8 @@ Route::group(['middleware' => ['auth', 'admin'], 'prefix' => 'admin'], function(
     });
     // Admin Home
     Route::get('/home', ['as' => 'admin', 'uses' => 'AdminController@getHome']);
+    // Admin Profile
+    Route::get('/profile', ['as' => 'adminProfile', 'uses' => 'EmployeeController@getProfile']);
     // Employee's Management
     Route::get('/employee', ['as' => 'addEmployee', 'uses' => 'EmployeeController@getAddEmployee']);
     Route::post('/employee', ['as' => 'addEmployee', 'uses' => 'EmployeeController@postAddEmployee']);
@@ -48,6 +56,8 @@ Route::group(['middleware' => ['auth', 'member'], 'prefix' => 'member'], functio
     });
     // Member Home
     Route::get('/home', ['as' => 'member', 'uses' => 'MemberController@getHome']);
+    // Member Profile
+    Route::get('/profile', ['as' => 'memberProfile', 'uses' => 'EmployeeController@getProfile']);
 });
 
 Route::group(['middleware' => ['auth', 'manager'], 'prefix' => 'manager'], function(){
@@ -57,4 +67,6 @@ Route::group(['middleware' => ['auth', 'manager'], 'prefix' => 'manager'], funct
     });
     // Manager Home
     Route::get('/home', ['as' => 'manager', 'uses' => 'ManagerController@getHome']);
+    // Manager Profile
+    Route::get('/profile', ['as' => 'managerProfile', 'uses' => 'EmployeeController@getProfile']);
 });

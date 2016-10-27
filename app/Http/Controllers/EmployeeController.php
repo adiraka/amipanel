@@ -143,4 +143,9 @@ class EmployeeController extends Controller
         Session::flash('success','Employee has been deleted.');
         return redirect()->route('viewEmployee');
     }
+
+    public function getProfile()
+    {
+        return view('employee.edit');
+    }
 }

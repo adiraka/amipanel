@@ -15,7 +15,7 @@
                     </a>
                     <ul class="dropdown-menu">
                         <li class="header">User Menu</li>
-                        <li><a href="javascript:void(0);"><i class="material-icons">person</i>{{Sentinel::getUser()->email}}</a></li>
+                        <li><a href="{{url('/'.Sentinel::getUser()->roles()->get()->first()->slug.'/profile')}}"><i class="material-icons">person</i>{{Sentinel::getUser()->email}}</a></li>
                         <li><a href="javascript:void(0);"><i class="material-icons">lock</i>Change Password</a></li>
                         <li role="seperator" class="divider"></li>
                         <li><a href="{{route('logout')}}"><i class="material-icons">input</i>Sign Out</a></li>
